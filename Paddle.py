@@ -1,7 +1,6 @@
 import pygame
 BLACK = (0, 0, 0)
 
-
 class paddle(pygame.sprite.Sprite):
     def __init__(self, color, width, height):
         super().__init__()
@@ -20,4 +19,12 @@ class paddle(pygame.sprite.Sprite):
 
     def moveDown(self, pixels, windowHeight):
         if self.rect.y <= windowHeight - 60:
-            self.rect.y += pixels          
+            self.rect.y += pixels
+
+    def moveRight(self, pixels, windowWidth):
+        if self.rect.x < windowWidth - 60:
+            self.rect.x += pixels
+            
+    def moveLeft(self, pixels):
+        if self.rect.x > 5:
+            self.rect.x -= pixels   
