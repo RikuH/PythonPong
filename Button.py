@@ -22,3 +22,6 @@ class button(pygame.sprite.Sprite):
         font = pygame.font.SysFont("comicsansms", 40)
         text = font.render(label, True, (0, 0, 0))    
         win.blit(text, (button.rect.x, button.rect.y))
+
+    def buttonEffect(self, button):
+        button.rect.x -= 50
