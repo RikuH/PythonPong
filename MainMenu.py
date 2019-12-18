@@ -46,7 +46,7 @@ def loadPongGame():
 
 def ExitGame():
     print("Exit")
-    run = False
+    pygame.quit()
 
 while run:
     pygame.time.delay(40)
