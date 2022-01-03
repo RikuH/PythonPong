@@ -1,13 +1,17 @@
+from typing import NoReturn
 import pygame
 BLACK = (0, 0, 0)
 
 class paddle(pygame.sprite.Sprite):
-    def __init__(self, color, width, height):
+    def __init__(self, color, width, height, name):
         super().__init__()
 
         self.image = pygame.Surface([width, height])
         self.image.fill(BLACK)
         self.image.set_colorkey(BLACK)
+
+        self.name = name
+
 
         pygame.draw.rect(self.image, color, [0, 0, width, height])
 
@@ -28,3 +32,6 @@ class paddle(pygame.sprite.Sprite):
     def moveLeft(self, pixels):
         if self.rect.x > 5:
             self.rect.x -= pixels   
+
+    def managePaddle(self, newHeight):
+        return
